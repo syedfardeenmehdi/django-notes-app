@@ -70,10 +70,13 @@ const NotePage = () => {
           <button onClick={handleSubmit}>Save</button>
         )}
       </div>
+<textarea
+  placeholder="Write your note here..."
+  onChange={(e) => setNote({...note, body: e.target.value})}
+  value={note.body || ''}
+></textarea>
       <div className="note-body">
-        <textarea onChange={(e) => {setNote({...note, 'body':e.target.value})}} value={note.body}>  
-        </textarea>
-      </div>
+            </div>
     </div>
   )
 }

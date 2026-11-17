@@ -1,0 +1,30 @@
+# Git files and history
+.git
+.gitignore
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Python cache and virtual environments
+__pycache__
+*.py[cod]
+*.pyo
+.venv
+venv
+env
+
+# Node dependencies
+node_modules
+mynotes/node_modules
+
+# Local database and persistent data
+data/mysql/db
+*.sqlite3
+
+# Logs and editor files
+*.log
+.vscode
+.idea
+.DS_Store
