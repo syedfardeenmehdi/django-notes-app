@@ -19,7 +19,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'cd /d/DevOpsProjects/django-notes-app && docker compose pull django_app && docker compose up -d --no-build'
+                sh 'cd /d/DevOpsProjects/django-notes-app && docker-compose pull django_app && docker-compose up -d --no-build'
             }
         }
     }
