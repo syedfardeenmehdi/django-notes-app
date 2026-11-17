@@ -20,7 +20,7 @@ RUN pip install --no-cache-dir -r requirements.txt \
 
 # Copy application source
 COPY . .
-
+RUN python manage.py collectstatic --clear --noinput
 EXPOSE 8000
 
 CMD ["gunicorn", "notesapp.wsgi:application", "--bind", "0.0.0.0:8000"]
