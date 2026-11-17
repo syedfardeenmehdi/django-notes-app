@@ -20,7 +20,12 @@ RUN pip install --no-cache-dir -r requirements.txt \
 
 # Copy application source
 COPY . .
-RUN python manage.py collectstatic --clear --noinput
+
+# Collect Django and React static files
+# Use a temporary build-only secret; never use the production secret here
+RUN DJANGO_SECRET_KEY="temporary-build-only-key-not-for-production" \
+    python manage.py collectstatic --clear --noinput
+
 EXPOSE 8000
 
 CMD ["gunicorn", "notesapp.wsgi:application", "--bind", "0.0.0.0:8000"]
